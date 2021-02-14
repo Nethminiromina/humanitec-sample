@@ -35,5 +35,5 @@ jobs:
         with:
           humanitec-token: ${{ secrets.HUMANITEC_TOKEN }}
           organization: limark-technologies
-          dockerfile: ./hello-world/Dockerfile
+          dockerfile: /hello-world/Dockerfile
           tag: latest
