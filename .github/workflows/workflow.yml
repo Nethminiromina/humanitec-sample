@@ -13,6 +13,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: ./hello-world
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -31,8 +35,6 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Build and Push to Humanitec
-        working-directory: ./hello-world
-        run: echo Hello, world!
         uses: humanitec/build-push-to-humanitec@v1
         with:
           humanitec-token: ${{ secrets.HUMANITEC_TOKEN }}
