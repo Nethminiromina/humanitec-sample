@@ -31,9 +31,10 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Build and Push to Humanitec
+        working-directory: ./hello-world
+        run: echo Hello, world!
         uses: humanitec/build-push-to-humanitec@v1
         with:
           humanitec-token: ${{ secrets.HUMANITEC_TOKEN }}
           organization: limark-technologies
-          dockerfile: hello-world/Dockerfile
           tag: latest
